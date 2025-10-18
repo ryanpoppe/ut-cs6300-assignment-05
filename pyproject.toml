@@ -1,0 +1,45 @@
+[project]
+name = "ut-cs6300-assignment-05"
+version = "0.1.0"
+description = ""
+authors = [
+    {name = "Ryan Poppe",email = "ryanpoppe42@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.12,<3.14"
+dependencies = [
+    "smolagents[openai,telemetry,toolkit] (>=1.21.3,<2.0.0)",
+    "pandas (>=2.3.2,<3.0.0)",
+    "numpy (>=2.3.2,<3.0.0)",
+    "dotenv (>=0.9.9,<0.10.0)",
+    "ddgs (>=9.6.0,<10.0.0)",
+    "requests (>=2.32.5,<3.0.0)",
+    "beautifulsoup4 (>=4.14.2,<5.0.0)",
+    "chromadb (>=1.1.0,<2.0.0)",
+    "sentence-transformers (>=5.1.1,<6.0.0)",
+    "scikit-learn (>=1.7.2,<2.0.0)",
+    "bitsandbytes (>=0.48.1,<0.49.0)"
+]
+packages = [
+    "src"
+]
+
+
+[tool.poetry]
+package-mode = false
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.4.2"
+
+
+[tool.poetry.dependencies]
+langchain = {allow-prereleases = true}
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
+
+[tool.pytest.ini_options]
+pythonpath = "src"
+testpaths = [
+    "tests"
+]
